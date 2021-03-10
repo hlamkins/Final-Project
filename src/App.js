@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { NavBar, Footer } from "./components";
 import { Home, Profile, ExternalApi } from "./views";
 
-import "./app.css";
+import "./style/App.css";
 
 const App = () => {
   return (
