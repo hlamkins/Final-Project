@@ -6,7 +6,7 @@ const AdoptionList = (props) => {
     <div>
       <div className="adoption-item">
         <div className="adoption-img-container">
-          <img className="adoption-img" src={img} />{" "}
+          <img className="adoption-img" src={img} alt="" />{" "}
         </div>{" "}
         <h3>
           {" "}
