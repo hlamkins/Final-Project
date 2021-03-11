@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { NavBar, Footer } from "./components";
-import { Home, Profile, ExternalApi } from "./views";
+import {  Profile, ExternalApi } from "./views";
+import HomePage from "./pages/Home";
 
 import "./style/App.css";
 
@@ -13,7 +14,7 @@ const App = () => {
       <div className="container flex-grow-1">
         <div className="mt-5">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={HomePage} />
             <Route path="/profile" component={Profile} />
             <Route path="/external-api" component={ExternalApi} />
           </Switch>
