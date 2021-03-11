@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
 
 import { Hero, HomeContent } from "../components";
+import Home from "../pages/Home"
 
-const Home = () => (
+const HomePage = () => (
   <Fragment>
     <Hero />
     <hr />
-    <HomeContent />
+    <Home />
   </Fragment>
 );
 
-export default Home;
+export default HomePage;
