@@ -1,88 +1,69 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { InputGroup, FormControl, Form, Card, CardGroup, Button } from "react-bootstrap";
 
 const HomeContent = () => (
   <div className="next-steps">
-    <h2 className="my-5 text-center">What can I do next?</h2>
+    <h2 className="text-center">Welcome to Re∞ue Me</h2>
 
     <div className="row">
-      <div className="col-md-5 mb-4">
-        <h6 className="mb-3">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://auth0.com/docs/connections"
-          >
-            <i className="fas fa-link mr-2" />
-            Configure other identity providers
-          </a>
-        </h6>
-        <p>
-          Auth0 supports social providers as Facebook, Twitter, Instagram and
-          100+, Enterprise providers as Microsoft Office 365, Google Apps,
-          Azure, and more. You can also use any OAuth2 Authorization Server.
-        </p>
+      <div className="col-md-4 mb-4">
+        Search Pet
+        <div className="col">
+          Search parameter goes here <br />
+          <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Label>Color</Form.Label>
+            <Form.Control as="select">
+              <option>Black</option>
+              <option>Brown</option>
+              <option>White</option>
+              <option>Red</option>
+              <option>Gray</option>
+            </Form.Control>
+          </Form.Group>
+          <Form.Check id="female" inline label="Female" type="radio" aria-label="radio 1" />
+          <Form.Check id="male" inline label="Male" type="radio" aria-label="radio 1" />
+
+          <br /><br />
+          <Button>Search</Button>
+        </div>
+        <div className="col"><br />History? listed of pet saved?</div>
       </div>
 
-      <div className="col-md" />
-
-      <div className="col-md-5 mb-4">
-        <h6 className="mb-3">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://auth0.com/docs/multifactor-authentication"
-          >
-            <i className="fas fa-link mr-2" />
-            Enable Multi-Factor Authentication
-          </a>
-        </h6>
-        <p>
-          Add an extra layer of security by enabling Multi-factor
-          Authentication, requiring your users to provide more than one piece of
-          identifying information. Push notifications, authenticator apps, SMS,
-          and DUO Security are supported.
-        </p>
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-md-5 mb-4">
-        <h6 className="mb-3">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://auth0.com/docs/anomaly-detection"
-          >
-            <i className="fas fa-link mr-2" />
-            Anomaly Detection
-          </a>
-        </h6>
-        <p>
-          Auth0 can detect anomalies and stop malicious attempts to access your
-          application. Anomaly detection can alert you and your users of
-          suspicious activity, as well as block further login attempts.
-        </p>
-      </div>
-
-      <div className="col-md" />
-
-      <div className="col-md-5 mb-4">
-        <h6 className="mb-3">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://auth0.com/docs/rules"
-          >
-            <i className="fas fa-link mr-2" />
-            Learn About Rules
-          </a>
-        </h6>
-        <p>
-          Rules are JavaScript functions that execute when a user authenticates
-          to your application. They run once the authentication process is
-          complete, and you can use them to customize and extend Auth0's
-          capabilities.
-        </p>
+      <div className="col-md-8 mb-4">
+        <h6>Adopt pet</h6>
+        <CardGroup>
+          <Card>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Pet 1</Card.Title>
+              <Card.Text>Pet Info</Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <Button>Adopt</Button>
+            </Card.Footer>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Pet 2</Card.Title>
+              <Card.Text>Pet Info</Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <Button>Adopt</Button>
+            </Card.Footer>
+          </Card>
+          <Card>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Body>
+              <Card.Title>Pet 3</Card.Title>
+              <Card.Text>Pet Info</Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <Button>Adopt</Button>
+            </Card.Footer>
+          </Card>
+        </CardGroup>
       </div>
     </div>
   </div>

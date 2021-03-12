@@ -31,7 +31,8 @@ const NavBar = () => {
   return (
     <div className="App">
       <header className="header">
-        <h1> Rescue Me ∞ !!! </h1> <div className="clear"> </div> <div className="nav-bar"> {renderButtons()} </div>
+        <h1> Re∞ue Me !!! </h1> 
+        <div className="clear"> </div> <div className="nav-bar"> {renderButtons()} </div>
       </header>
     </div>
   );
