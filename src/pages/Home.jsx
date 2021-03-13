@@ -2,10 +2,10 @@ import React from 'react';
 import NavBar from '../components/NavBar'
 import HomeContent from '../components/home-content'
 
-function Home() {
+function Home(props) {
   return (
     <div className="Home">
-      <HomeContent />
+      <HomeContent {...props}/>
       
 
     </div>
