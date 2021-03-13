@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  InputGroup,
-  FormControl,
-  Form,
-  Card,
-  CardGroup,
-  Button,
-} from "react-bootstrap";
+import { InputGroup, FormControl, Form, Card, CardGroup, Button } from "react-bootstrap";
 
 const HomeContent = (props) => {
   const [searchVal, setSearchVal] = useState("");
@@ -48,20 +41,8 @@ const HomeContent = (props) => {
                 <option>Gray</option>
               </Form.Control>
             </Form.Group>
-            <Form.Check
-              id="female"
-              inline
-              label="Female"
-              type="radio"
-              aria-label="radio 1"
-            />
-            <Form.Check
-              id="male"
-              inline
-              label="Male"
-              type="radio"
-              aria-label="radio 1"
-            />
+            <Form.Check id="female" inline label="Female" type="radio" aria-label="radio 1" />
+            <Form.Check id="male" inline label="Male" type="radio" aria-label="radio 1" />
             <br />
             <br />
             <Button onClick={handleSubmit}>Search</Button>
@@ -78,22 +59,17 @@ const HomeContent = (props) => {
       <div className="row"> */}
         <div className="col-9">
           <h6>Adopt pet</h6>
-            {/* Move this to a separate component When an animal is favorited, then add to an array on the user collection.  For the favorites page we pass an array of the users favorited animals*/}
+          {/* Move this to a separate component When an animal is favorited, then add to an array on the user collection.  For the favorites page we pass an array of the users favorited animals*/}
           <div className="row" style={{ width: "100%" }}>
             {props.renderAnimals
               .filter((animal) => animal.photos[0] && animal.photos[0].large)
               .map((animal) => (
                 <Card className="col-4">
                   {console.log(animal)}
-                  <Card.Img
-                    variant="top"
-                    src={
-                      animal.photos.length >= 1 ? animal.photos[0].large : ""
-                    }
-                  />
+                  <Card.Img variant="top" src={animal.photos.length >= 1 ? animal.photos[0].large : ""} />
                   <Card.Body>
                     <Card.Title>{animal.name}</Card.Title>
-                    <Card.Text> {animal.description} </Card.Text>
+                    <Card.Text> {animal.description != null ? animal.description : "No description"} </Card.Text>
                   </Card.Body>
                   <Card.Footer>
                     <Button>Adopt</Button>
@@ -101,7 +77,7 @@ const HomeContent = (props) => {
                 </Card>
               ))}
           </div>
-        </div> 
+        </div>
       </div>
     </div>
   );
