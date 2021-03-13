@@ -15,6 +15,7 @@ const petFinderSecret = "v7SnK15B4vIsf91scgBau4jsJs7GM2KJFl4ptkuX";
 const App = () => {
 
   const [accessToken, setAccessToken] = useState(null)
+  const [renderAnimals, setRenderAnimals] = useState([]);
  const accessTokenContextValue = {accessToken, setAccessToken};
   useEffect(() => {
     const fetchAccesToken = async () => {
@@ -40,13 +41,14 @@ const App = () => {
   
   const findAnimal = async (url, type, page) => {
     // `https://api.petfinder.com/v2/animals?type=dog&page=2`
-    await fetch(`${url}?type=${type}&page=${page}`,{
+    await fetch(`${url}?breed=${type}&page=${page}`,{
       method: "GET",
       headers: {"Authorization" : "Bearer " + accessToken}
     }).then((response) => {
       return response.json();
     }).then((data) => {
         console.log(data);
+        setRenderAnimals(data.animals)
     })
   };
   return (
@@ -55,7 +57,7 @@ const App = () => {
       <div className="container flex-grow-1">
         <div className="mt-5">
           <Switch>
-            <Route path="/" exact component={HomePage} />
+            <Route path="/" exact render={(props) => <HomePage {...props} findAnimal={findAnimal} renderAnimals={renderAnimals} />} />
             <Route path="/profile" component={Profile} />
             <Route path="/external-api" component={ExternalApi} />
           </Switch>
