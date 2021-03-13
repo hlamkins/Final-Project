@@ -9,6 +9,7 @@
 
 .next-steps .col-md-5 {
   margin-bottom: 3rem;
+  
 }
 
 @media (max-width: 768px) {
@@ -33,5 +34,9 @@
 .result-block-container .result-block {
   opacity: 1;
 }
+
+
+/* my testing area */
+
 
 

@@ -68,3 +68,12 @@ code {
 .hero .app-logo {
   max-width: 10.5rem;
 }
+
+
+/* my testing stuff */
+
+body{
+  background-image: url("https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") ;
+  background-position: 100px 5px;
+  
+}
