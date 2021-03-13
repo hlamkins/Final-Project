@@ -22,10 +22,22 @@ const HomeContent = (props) => {
       <h2 className="text-center">Welcome to Re∞ue Me</h2>
 
       <div className="row">
-        <div className="col-md-4 mb-4">
+        <div className="col-md-3 mb-4">
           Search Pet
           <div className="col">
-            Search parameter goes here <br />
+            <form>
+          <div class="form-group">
+            <label for="pet-search">Search</label>
+
+            <input
+              onChange={(e) => setSearchVal(e.target.value)}
+              type="search"
+              class="form-control"
+              placeholder="Search Pet"
+            />
+            
+          </div>
+        </form> 
             <Form.Group controlId="exampleForm.ControlSelect1">
               <Form.Label>Color</Form.Label>
               <Form.Control as="select">
@@ -52,29 +64,19 @@ const HomeContent = (props) => {
             />
             <br />
             <br />
-            <Button>Search</Button>
+            <Button onClick={handleSubmit}>Search</Button>
           </div>
+        
           <div className="col">
             <br />
             History? listed of pet saved?
           </div>
         </div>
 
-        <form>
-          <div class="form-group">
-            <label for="pet-search">Search</label>
-
-            <input
-              onChange={(e) => setSearchVal(e.target.value)}
-              type="search"
-              class="form-control"
-              placeholder="Search Pet"
-            />
-            <button onClick={handleSubmit}> Search</button>
-          </div>
-        </form>
-
-        <div className="col-12">
+        
+      {/* </div>
+      <div className="row"> */}
+        <div className="col-9">
           <h6>Adopt pet</h6>
             {/* Move this to a separate component When an animal is favorited, then add to an array on the user collection.  For the favorites page we pass an array of the users favorited animals*/}
           <div className="row" style={{ width: "100%" }}>
@@ -90,7 +92,7 @@ const HomeContent = (props) => {
                     }
                   />
                   <Card.Body>
-                    <Card.Title>Pet 1</Card.Title>
+                    <Card.Title>{animal.name}</Card.Title>
                     <Card.Text> {animal.description} </Card.Text>
                   </Card.Body>
                   <Card.Footer>
