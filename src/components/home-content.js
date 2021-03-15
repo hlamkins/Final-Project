@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { InputGroup, FormControl, Form, Card, CardGroup, Button } from "react-bootstrap";
 
@@ -9,6 +11,18 @@ const HomeContent = (props) => {
     props.findAnimal("https://api.petfinder.com/v2/animals", searchVal, "1");
     console.log(searchVal);
   };
+
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
+  
+  const favs = (pets) => {
+    axios.post("/api/pets/favorites",  { email: user.email, ...pets})
+  }
+
 
   return (
     <div className="next-steps">
@@ -66,13 +80,19 @@ const HomeContent = (props) => {
               .map((animal) => (
                 <Card className="col-4">
                   {console.log(animal)}
-                  <Card.Img variant="top" src={animal.photos.length >= 1 ? animal.photos[0].large : ""} />
+                  <Card.Img 
+                  variant="top" src={animal.photos.length >= 1 ? animal.photos[0].large : ""} 
+                  style = {{width:"90%", height:"50%", paddingTop:"10%",}}
+                  />
                   <Card.Body>
                     <Card.Title>{animal.name}</Card.Title>
                     <Card.Text> {animal.description != null ? animal.description : "No description"} </Card.Text>
                   </Card.Body>
                   <Card.Footer>
                     <Button>Adopt</Button>
+                    {user && 
+                    <Button onclick = { () => favs(animal)}>favorite</Button>
+                    } 
                   </Card.Footer>
                 </Card>
               ))}
