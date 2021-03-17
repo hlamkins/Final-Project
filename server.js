@@ -11,6 +11,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+//Whoever has heroku setup will need to have this evviroment variable.  Value is retreived from Atlas.  Would have to create a database in order to create a connection string.  
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pets", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
 app.use(routes);
 
 app.listen(PORT, function() {
