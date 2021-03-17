@@ -38,13 +38,13 @@ const Home = (props) => {
 	return (
 		<div className="next-steps">
 			<h1 className="text-center">Welcome to Re∞ue Me</h1>
-
+      <br></br>
 			<div className="row">
 				<div className="col-md-3 mb-4">
 					<div className="col">
 						<form>
 							<div className="form-group">
-								<label htmlFor="pet-search">Search</label>
+								<label htmlFor="pet-search">Search a Dog Breed</label>
 
 								<input
 									onChange={(e) => setSearchVal(e.target.value)}
@@ -54,27 +54,21 @@ const Home = (props) => {
 								/>
 							</div>
 						</form>
-
-						<input
-							onChange={(e) => setSearchVal(e.target.value)}
-							type="search"
-							className="form-control"
-							placeholder="Search Pet"
-						/>
 					</div>
 
+          <br></br>
 					<Button onClick={handleSubmit}>Search</Button>
 				</div>
 
-				<div className="col">
+				
 					<br />
-				</div>
-			</div>
+				
+			
 
 			{/* </div>
       <div className="row"> */}
 			<div className="col-9">
-				<h6>Dogs Available for Re∞ue</h6>
+				<h5>Dogs Available for Re∞ue</h5>
 				{/* Move this to a separate component When an animal is favorited, then add to an array on the user collection.  For the favorites page we pass an array of the users favorited animals*/}
 				<div className="row" style={{ width: '100%' }}>
 					{renderAnimals.filter((animal) => animal.photos[0] && animal.photos[0].large).map((animal) => (
@@ -109,6 +103,8 @@ const Home = (props) => {
 				</div>
 			</div>
 		</div>
+    </div>
+    
 	);
 };
 
