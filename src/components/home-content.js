@@ -41,27 +41,7 @@ const HomeContent = (props) => {
 								/>
 							</div>
 						</form>
-						<Form.Group controlId="exampleForm.ControlSelect1">
-							<Form.Label>Select a Dog Breed</Form.Label>
-							<Form.Control as="select">
-								<option>Akita</option>
-								<option>American Bulldog</option>
-								<option>Boxer</option>
-								<option>Beagle</option>
-								<option>Cane Corso</option>
-                <option>Chihuahua</option>
-                <option>Husky</option>
-                <option>Labrador Retriever</option>
-                <option>Mastiff</option>
-                <option>Poodle</option>
-                <option>Pug</option>
-                <option>Shar-Pei</option>
-                <option>Terrier</option>
-                <option>Whippet</option>
-							</Form.Control>
-						</Form.Group>
-						<br />
-						<br />
+					
 						<Button onClick={handleSubmit}>Search</Button>
 					</div>
 				</div>
@@ -90,7 +70,7 @@ const HomeContent = (props) => {
 										</Card.Text>
 									</Card.Body>
 									<Card.Footer>
-										<Button>Learn More!</Button>{' '}
+										<a className="btn btn-primary" style={{ color: "white" }} href={animal.url} target="_blank" rel="noreferrer">Learn More!</a>{' '}
 										{/* need to add a link when clicked to the url in the returned object */}
 										{user && <Button onclick={() => favs(animal)}>Save Me!</Button>}
 									</Card.Footer>
