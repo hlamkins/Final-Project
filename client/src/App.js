@@ -47,7 +47,7 @@ const App = () => {
         <div className="mt-5">
           <Switch>
             <Route path="/" exact render={(props) => <Home {...props} accessToken={accessToken} />} />
-            <Route path="/profile" accessToken={accessToken} component={Profile} />            
+            <Route path="/save" accessToken={accessToken} component={Profile} />            
           </Switch>
         </div>
       </div>
