@@ -21,6 +21,7 @@ const Home = (props) => {
 			addToast
 		);
 		if (data) {
+			console.log(data.animals)
 			setRenderAnimals(data.animals);
 		}
 	};
