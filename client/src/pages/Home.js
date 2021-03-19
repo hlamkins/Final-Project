@@ -85,12 +85,12 @@ const Home = (props) => {
 
 				{/* </div>
       <div className="row"> */}
-				<div className="col-9">
+				<div className="col-md-9">
 					<h5>Dogs Available for Re∞ue</h5>
 					{/* Move this to a separate component When an animal is favorited, then add to an array on the user collection.  For the favorites page we pass an array of the users favorited animals*/}
 					<div className="row" style={{ width: '100%' }}>
 						{renderAnimals.filter((animal) => animal.photos[0] && animal.photos[0].large).map((animal) => (
-							<Card key={animal.id} className="col-4">
+							<Card key={animal.id} className="col-md-12">
 								{/* {console.log(animal)} */}
 								<Card.Img
 									variant="top"
