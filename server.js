@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -12,9 +13,10 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Whoever has heroku setup will need to have this evviroment variable.  Value is retreived from Atlas.  Would have to create a database in order to create a connection string.  
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pets", {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
 app.use(routes);

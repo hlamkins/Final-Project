@@ -1,4 +1,4 @@
-import AnimalCard from "../components/AnimalCard"
+import AnimalCard from "../components/AnimalCard";
 import React from "react";
 const Animals = [];
 //   "id": 50893907,
