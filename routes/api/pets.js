@@ -8,7 +8,7 @@ router.put('/doesExist', ({ body, params }, res) => {
 			if (dbPets === null) {
 				res.send("Doesn't exist");
 			} else {
-				res.send('exists');
+				res.json(dbPets);
 			}
 		})
 		.catch((err) => {
@@ -17,8 +17,7 @@ router.put('/doesExist', ({ body, params }, res) => {
 });
 
 router.post('/newPet', ({ body, params }, res) => {
-	// console.log(body);
-	// console.log(params);
+	
 	db.Pets
 		.create(body)
 		.then((dbPets) => {
@@ -29,5 +28,16 @@ router.post('/newPet', ({ body, params }, res) => {
 		});
 });
 
+router.put('/findOne', ({ body, params }, res) => {
+	
+	db.Pets
+		.findOne({ _id: body.findUser })
+		.then((dbPets) => {
+			res.json(dbPets);
+		})
+		.catch((err) => {
+			res.status(400).json(err);
+		});
+});
 
 module.exports = router;
