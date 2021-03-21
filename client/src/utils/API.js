@@ -9,6 +9,7 @@ export const findAnimal = async (url, type, page, accessToken, addToast) => {
         method: "GET",
         headers: {"Authorization" : "Bearer " + accessToken}
       });
+      console.log(req)
       return req.data;
   } catch (ex) {
     addToast('Dog is not found', { appearance: 'error' });

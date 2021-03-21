@@ -6,7 +6,7 @@ const AnimalCard = (props) => (
     {/* {console.log(animal)} */}
     <Card.Img
         variant="top"
-        src={props.photos.length >= 1 ? props.photos[0].large : ''}
+        src={props.photos}
         style={{ width: '90%', height: '50%', paddingTop: '10%' }}
     />
     <Card.Body>
