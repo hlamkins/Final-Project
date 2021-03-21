@@ -41,7 +41,7 @@ const Home = (props) => {
     });
     if (petDoesExist.data === "Doesn't exist") {
       const createPet = await axios.post("/api/pets/newPet", {
-        photo: pets.photos[0].large,
+        photos: pets.photos[0].large,
         name: pets.name,
         description: pets.description,
         petID: pets.id,

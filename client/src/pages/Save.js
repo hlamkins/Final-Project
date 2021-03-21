@@ -31,8 +31,8 @@ function Save () {
   }, [animals])
   return (
     <div className="row" style={{ width: '100%' }}>
-      {animals.map(pet  => (
-        <p key={pet._id}>{pet.name}</p>
+      {animals.map(pets  => (
+        <AnimalCard key={pets._id} name={pets.name} photos={pets.photo} description={pets.description} />
       ))}
     </div>
   );

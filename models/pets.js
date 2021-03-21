@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 
 const petSchema = new Schema({
-  photo: { type: String},
+  photos: { type: String},
   name: { type: String, required: true },
   description: { type: String},
   petID: { type: Number, required: true }
