@@ -33,7 +33,7 @@ Install the client project dependencies:
 
 ```bash
 npm install
-```
+````
 
 Run the client project:
 
