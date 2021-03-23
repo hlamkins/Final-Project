@@ -32,7 +32,7 @@ function Save () {
   return (
     <div className="row" style={{ width: '100%' }}>
       {animals.map(pets  => (
-        <AnimalCard key={pets._id} name={pets.name} photos={pets.photo} description={pets.description} />
+        <AnimalCard key={pets._id} name={pets.name} photos={pets.photos} description={pets.description} />
       ))}
     </div>
   );
