@@ -15,11 +15,11 @@ etc
 
 # Visuals
 
-![Home Page](Client/images/homepage.png)
-![Search via breed type](Client/images/homepagewithtext.png)
-![Search Result](Client/images/result.png)
-![Adoption Page](Client/images/adoptionpage.png)
-![Login Page](Client/images/loginpage.png)
+![Home Page](client/images/homepage.png)
+![Search via breed type](client/images/homepagewithtext.png)
+![Search Result](client/images/result.png)
+![Adoption Page](client/images/adoptionpage.png)
+![Login Page](client/images/loginpage.png)
 
 
 
@@ -33,7 +33,7 @@ Install the client project dependencies:
 
 ```bash
 npm install
-```
+````
 
 Run the client project:
 
