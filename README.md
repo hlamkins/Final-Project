@@ -43,7 +43,7 @@ npm start
 
 The application runs by on port `4040` to mitigate conflicting with other client applications you may be running.
 
-Visit [`https://github.com/hlamkins/Final-Project`](https://github.com/hlamkins/Final-Project) to access the starter application.
+Visit [`https://finalproject-pets.herokuapp.com/`](https://finalproject-pets.herokuapp.com/) to access the deployed project.
 
 
 
